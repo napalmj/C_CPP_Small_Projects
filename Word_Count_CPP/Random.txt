@@ -1,0 +1,3 @@
+This file is to count all of the words in the universe because I think it's amazing to know how many words are out there. JK. This will only count whats in the file. All of the words in the universe will have to be the saved for another time but not before we make a program that scans a file character by character xD
+
+this this this this this this

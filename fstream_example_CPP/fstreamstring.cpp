@@ -1,3 +1,9 @@
+/********************************************************
+Author: Nathaniel
+
+This Program counts the number of strings in a file and the number of certain designinated strings
+*********************************************************/
+
 #include<fstream>
 #include<iostream>
 #include<string>

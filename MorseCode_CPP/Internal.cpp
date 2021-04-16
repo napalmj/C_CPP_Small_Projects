@@ -4,10 +4,6 @@
 using namespace std;
 
 
-enum enumAlpha_Upper{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z};
-enum enumAlpha_Lower{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z};
-
-
 const int size = 100;
 
 class Morse::Internal
@@ -26,7 +22,7 @@ private:
 	int inputStrCounter;
 public:
 	void encode();
-	void decode();
+	//void decode(); not implimented
 	void getString();
 	void menuItems();
 	void menuSwitch();
@@ -36,6 +32,7 @@ public:
 //reference chart
 //A-0,B-1,C-2,D-3,E-4,F-5,G-6,H-7,I-8,J-9,K-10,L-11,M-12,N-13,O-14,P-15,Q-16,R-17,S-18,T-19,U-20,V-21,W-22,X-23,Y-24,Z-25
 
+//encodes the characters given by user : case sensitive
 void Morse::Internal::encode()
 {
 	int i, j, k = 0, c = inputStrCounter;
@@ -58,7 +55,7 @@ void Morse::Internal::encode()
 						codeStr[i] = Alpha_M[j];
 						break;
 					}
-					if(inputStr[j] == Alpha_Upper[j])
+					else if(inputStr[j] == Alpha_Upper[j])
 					{
 						codeStr[i] = Alpha_M[j];
 						break;
@@ -81,10 +78,10 @@ void Morse::Internal::encode()
 	cout << endl;
 
 }
-void Morse::Internal::decode()
+/*void Morse::Internal::decode()
 {
 
-}
+}*/
 void Morse::Internal::getString()
 {
 	int i = 0;
@@ -103,13 +100,15 @@ void Morse::Internal::getString()
 			break;
 	}
 }
+
 void Morse::Internal::menuItems() //instructing user for how to proceed in program
 {
 	cout << "This program is designed to convert from or to morse code.\n";
 	cout << "Options for this program are as follows:\n";
-	cout << "1. Decode\n2. Encode\n";
+	cout << "1. Encode\n2. Exit\n";
 	cout << "\nSelect 1 or 2 and press 'Enter' too continue...\n";
 }
+//switch statement for the menu - non-revolving
 void Morse::Internal::menuSwitch()
 {
 	menuItems();
@@ -120,11 +119,10 @@ void Morse::Internal::menuSwitch()
 	{
 		case 1:
 		getString();
-		decode();
+		encode();
 		break;
 		case 2:
-		getString();
-		encode();
+		exit(1);
 		break;
 		
 		default:
@@ -133,11 +131,9 @@ void Morse::Internal::menuSwitch()
 }
 Morse::Morse()
 {
-
 }
 Morse::~Morse()
 {
-
 }
 void Morse::Interface()
 {
